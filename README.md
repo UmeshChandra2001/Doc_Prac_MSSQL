@@ -1,2 +1,20 @@
 # Doc_Prac_MSSQL
 DOCKER DATABASE PRATICE FOR MS SQL SERVER
+
+**To Create sql Image**
+docker build -t imgname:version
+
+**To Create the Container for SQL server**
+docker run -d --name <containername> -p host port:Containerport imgname:version
+
+**To Connect to SQL SERVER Container**
+docker exec -it mscont2 bash
+
+**To Connect DB**
+/opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'Admin@123' -C
+
+**To Create the Databases**
+/opt/mssql-tools18/bin/sqlcmd \ -S localhost \ -U sa \  -P 'Admin@123' \ -C \  -i /usr/src/app/init/tfi_ms.sql
+
+**To See the databases**
+SELECT name FROM sys.databases
