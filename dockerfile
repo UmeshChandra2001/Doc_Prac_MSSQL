@@ -1,0 +1,8 @@
+FROM mcr.microsoft.com/mssql/server:2022-latest
+MAINTAINER UMESH
+LABEL THIS DOCKER MS SQL DOCKER FILE
+EXPOSE 1433
+COPY tfi_ms.sql /usr/src/app/init/
+ENV ACCEPT_EULA=Y
+ENV MSSQL_SA_PASSWORD=Admin@123
+ENV MSSQL_PID=Developer
